@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.activities.Actions;
+import hexlet.code.activities.games.Calc;
 import hexlet.code.activities.games.Even;
 import hexlet.code.activities.games.exceptions.InvalidOptionException;
 
@@ -22,6 +23,15 @@ public class App {
                     cli.errorMessage("NumberFormatException: " + nfe.getMessage());
                 } catch (InvalidOptionException e) {
                     cli.errorMessage("InvalidOptionExcept: " + e.getMessage());
+                }
+            }
+            case (3) -> {
+                try {
+                    var game = new Calc(cli);
+                    game.greeting();
+                    game.game();
+                } catch (NumberFormatException nfe) {
+                    cli.errorMessage("NumberFormatException: " + nfe.getMessage());
                 }
             }
             default ->
