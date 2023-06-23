@@ -22,7 +22,14 @@ public class Actions {
 
     public String start() {
         String[] messages = {
-            "Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n0 - Exit\nYour choice: "
+            """
+            Please enter the game number and press Enter.
+            1 - Greet
+            2 - Even
+            3 - Calc
+            4 - GCD
+            0 - Exit
+            Your choice:\s"""
         };
         var answer = this.cli.dialog(messages[0]);
         this.cli.dialog("", true);
