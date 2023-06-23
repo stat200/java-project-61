@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.activities.Actions;
 import hexlet.code.activities.games.Calc;
 import hexlet.code.activities.games.Even;
+import hexlet.code.activities.games.Gcd;
 import hexlet.code.activities.games.exceptions.InvalidOptionException;
 
 public class App {
@@ -28,6 +29,15 @@ public class App {
             case (3) -> {
                 try {
                     var game = new Calc(cli);
+                    game.greeting();
+                    game.game();
+                } catch (NumberFormatException nfe) {
+                    cli.errorMessage("NumberFormatException: " + nfe.getMessage());
+                }
+            }
+            case (4) -> {
+                try {
+                    var game = new Gcd(cli);
                     game.greeting();
                     game.game();
                 } catch (NumberFormatException nfe) {
